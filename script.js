@@ -1,10 +1,6 @@
 const apiKey = 'AIzaSyA1rMUv-ST44DH2FFghqQUtE1Pqdyn09oA';
 
-const messageText = `I’m writing to express deep concern over Governor Walz’s revised state budget proposal...
-
-Sincerely,
-[Your Full Name]
-[Your Address / City, MN];
+const messageText = `I’m writing to express deep concern over Governor Walz’s revised state budget proposal...';
 
 async function searchOfficials() {
   const address = document.getElementById('addressInput').value;
