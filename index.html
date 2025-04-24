@@ -6,15 +6,23 @@
 </head>
 <body>
   <h2>Find Your Elected Officials</h2>
-  <input type="text" id="addressInput" placeholder="Enter your address or ZIP">
+  <p>Enter your full street address (e.g., 123 Main St, Minneapolis, MN) for the most accurate results.</p>
+  <input type="text" id="addressInput" placeholder="Enter your full address">
   <button onclick="searchOfficials()">Search</button>
 
   <div id="officialsList"></div>
 
-  <h3>Write your message:</h3>
-  <textarea id="emailMessage" rows="6" cols="60" disabled>This message is pre-filled with your advocacy text.</textarea>
-  <br>
+  <h3>Preview of Message to be Sent:</h3>
+  <div id="previewBox" class="preview-box"></div>
+
   <button onclick="sendEmails()">Send Email to Selected Officials</button>
+
+  <h4>How This Works:</h4>
+  <ul>
+    <li>This app uses your full address to find officials at federal, state, and (if available) local levels.</li>
+    <li>Click "Send Email" to open your default email client with the message pre-filled.</li>
+    <li>To use a dedicated email server, you’ll need to connect via SMTP (e.g., Gmail API, Mailgun, or SendGrid) — this requires backend integration.</li>
+  </ul>
 
   <script src="script.js"></script>
 </body>
