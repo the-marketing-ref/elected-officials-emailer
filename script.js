@@ -16,9 +16,9 @@ async function searchOfficials() {
   let html = '<form id="emailForm">';
 
   offices.forEach(office => {
-    office.officialIndices.forEach(index => {
+    (office.officialIndices || []).forEach(index => {
       const official = officials[index];
-      if (official.emails && official.emails.length > 0) {
+      if (official?.emails?.length) {
         official.emails.forEach(email => {
           html += `<label>
             <input type="checkbox" name="email" value="${email}"> 
