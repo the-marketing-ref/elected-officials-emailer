@@ -48,7 +48,7 @@ function sendEmails() {
   const emails = Array.from(checkboxes).map(cb => cb.value);
 
   const subject = encodeURIComponent('Please Reconsider Eliminating Non-Public Pupil Aid in the State Budget');
-  const body = encodeURIComponent(messageText);
+  const body = encodeURIComponent(`I’m writing to express deep concern ...`); // full body content here
 
   if (emails.length === 0) {
     alert("Please select at least one official.");
@@ -56,6 +56,9 @@ function sendEmails() {
   }
 
   const mailtoLink = `mailto:${emails.join(',')}?subject=${subject}&body=${body}`;
-  window.location.href = mailtoLink;
+  
+  // ✅ Log to the console for testing
   console.log("Mailto Link:", mailtoLink);
+
+  window.location.href = mailtoLink;
 }
