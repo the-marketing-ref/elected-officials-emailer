@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Your Officials</title>
+</head>
+<body>
+  <h2>Find Your Elected Officials</h2>
+  <input type="text" id="addressInput" placeholder="Enter your address or ZIP">
+  <button onclick="searchOfficials()">Search</button>
+
+  <div id="officialsList"></div>
+
+  <h3>Write your message:</h3>
+  <textarea id="emailMessage" rows="6" cols="60">Dear Representative, ...</textarea>
+  <br>
+  <button onclick="sendEmails()">Send Email to Selected Officials</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
