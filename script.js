@@ -4,20 +4,25 @@ async function searchOfficials() {
   const address = document.getElementById('addressInput').value;
   const response = await fetch(`https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${encodeURIComponent(address)}&key=${apiKey}`);
   const data = await response.json();
-  
+
   const officials = data.officials || [];
   const offices = data.offices || [];
-  
+
+  if (!offices.length || !officials.length) {
+    document.getElementById('officialsList').innerHTML = "<p>No officials found for this address.</p>";
+    return;
+  }
+
   let html = '<form id="emailForm">';
-  
+
   offices.forEach(office => {
     office.officialIndices.forEach(index => {
       const official = officials[index];
       if (official.emails && official.emails.length > 0) {
         official.emails.forEach(email => {
           html += `<label>
-            <input type="checkbox" name="email" value="\${email}"> 
-            \${official.name} - \${email}
+            <input type="checkbox" name="email" value="${email}"> 
+            ${official.name} - ${email}
           </label><br>`;
         });
       }
