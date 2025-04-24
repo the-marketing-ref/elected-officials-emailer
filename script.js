@@ -57,4 +57,5 @@ function sendEmails() {
 
   const mailtoLink = `mailto:${emails.join(',')}?subject=${subject}&body=${body}`;
   window.location.href = mailtoLink;
+  console.log("Mailto Link:", mailtoLink);
 }
